@@ -3,11 +3,13 @@
 		<h1>Artists</h1>
 		<label *ngIf="name" [innerHTML]="'name: ' + name"></label>
 		<input 
+		#newArtist
 		[(ngModel)] = "name"
-		(keyup.enter)="addArtist(newArtist.value); newArtist.value='' " 
-
-		#newArtist>
-		<button (click)="addArtist(newArtist.value)">Add</button>
+		(keyup.enter)="addArtist(newArtist.value); newArtist.value=name='' " 
+		(click)="newArtist.value=name=''"
+		(focus)="alert('Hey stop!')"
+		>
+		<button class="btn" (click)="addArtist(newArtist.value);newArtist.value=name=''">Add</button>
 		</div>
 </div>
 <ul class="artistlist cf">
