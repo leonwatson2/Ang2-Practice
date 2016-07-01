@@ -20,11 +20,11 @@ System.register(['angular2/core'], function(exports_1, context_1) {
         execute: function() {
             AppComponent = (function () {
                 function AppComponent() {
-                    this.name = "'Jim'";
                     this.artists = ['Bob Marley', 'Ronald Jenkees', 'Pentatonix', 'Snarky Puppy'];
+                    this.name = this.artists[0];
                 }
-                AppComponent.prototype.clicking = function (e, a) {
-                    console.log(e, a);
+                AppComponent.prototype.clicking = function (container, a) {
+                    this.name = a;
                 };
                 AppComponent.prototype.addArtist = function (a) {
                     if (a != "")

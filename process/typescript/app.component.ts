@@ -6,14 +6,16 @@ import {Component} from 'angular2/core';
 })
 
 export class AppComponent {
-	name = "'Jim'";
 	artists = ['Bob Marley','Ronald Jenkees', 'Pentatonix', 'Snarky Puppy'];
-	clicking(e, a){
-		console.log(e, a);
+	name = this.artists[0];
+	clicking(container, a){
+		this.name = a;
+		
+		
 	}
 	addArtist(a){
 		if(a != "")
 			this.artists.push(a);
-		
+
 	}
 }
